@@ -5,6 +5,7 @@
 #define open_os _open
 #define write_os _write
 #define read_os _read
+#define unlink_os _unlink
 #define close_os _close
 #define O_CREAT _O_CREAT
 #define O_RDWR  _O_RDWR
@@ -17,6 +18,7 @@
 #define open_os open
 #define write_os write
 #define read_os read
+#define unlink_os unlink
 #define close_os close
 #else
 #define stat_os stat64
@@ -25,5 +27,6 @@
 #define open_os open
 #define write_os write
 #define read_os read
+#define unlink_os unlink
 #define close_os close
 #endif
