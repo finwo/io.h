@@ -8,7 +8,6 @@
 #define close_os _close
 #define O_CREAT _O_CREAT
 #define O_RDWR  _O_RDWR
-#define OPENMODE  (_S_IREAD | _S_IWRITE)
 #define O_DSYNC 0
 #define ssize_t SSIZE_T
 #elif defined(__APPLE__)
@@ -19,7 +18,6 @@
 #define write_os write
 #define read_os read
 #define close_os close
-#define OPENMODE  (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP)
 #else
 #define stat_os stat64
 #define fstat_os fstat64
@@ -28,5 +26,4 @@
 #define write_os write
 #define read_os read
 #define close_os close
-#define OPENMODE  (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP)
 #endif
