@@ -1,3 +1,6 @@
+#ifndef __FINWO_IO_H__
+#define __FINWO_IO_H__
+
 #include <stdio.h>
 
 #if defined(_WIN32) || defined(_WIN64)
@@ -42,3 +45,5 @@
 #define unlink_os unlink
 #define close_os close
 #endif
+
+#endif // __FINWO_IO_H__
