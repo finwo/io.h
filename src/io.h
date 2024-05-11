@@ -1,3 +1,15 @@
+#include <stdio.h>
+
+#if defined(_WIN32) || defined(_WIN64)
+// Needs to be AFTER winsock2 which is used for finwo/endian.h
+#include <windows.h>
+#include <io.h>
+#include <BaseTsd.h>
+#else
+#include <sys/types.h>
+#include <unistd.h>
+#endif
+
 #if defined(_WIN32) || defined(_WIN64)
 #define stat_os __stat64
 #define fstat_os _fstat64
