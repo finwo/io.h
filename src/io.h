@@ -22,6 +22,7 @@
 #define read_os _read
 #define unlink_os _unlink
 #define close_os _close
+#define truncate_os _chsize
 #define O_CREAT _O_CREAT
 #define O_RDWR  _O_RDWR
 #define O_DSYNC 0
@@ -35,6 +36,7 @@
 #define read_os read
 #define unlink_os unlink
 #define close_os close
+#define truncate_os ftruncate
 #else
 #define stat_os stat64
 #define fstat_os fstat64
@@ -44,6 +46,7 @@
 #define read_os read
 #define unlink_os unlink
 #define close_os close
+#define truncate_os ftruncate
 #endif
 
 #endif // __FINWO_IO_H__
