@@ -1,7 +1,7 @@
 #ifndef __FINWO_IO_H__
 #define __FINWO_IO_H__
 
-#if !(defined(_WIN32) || defined(_WIN64) || defined(__APPLE))
+#if (!(defined(_WIN32) || defined(_WIN64) || defined(__APPLE))) && !defined(_LARGEFILE64_SOURCE)
 #define _LARGEFILE64_SOURCE
 #endif
 
