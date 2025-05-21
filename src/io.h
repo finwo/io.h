@@ -18,6 +18,7 @@
 #endif
 
 #if defined(_WIN32) || defined(_WIN64)
+#define access_os _access
 #define stat_os __stat64
 #define fstat_os _fstat64
 #define seek_os _lseeki64
@@ -32,6 +33,7 @@
 #define O_DSYNC 0
 #define ssize_t SSIZE_T
 #elif defined(__APPLE__)
+#define access_os access
 #define stat_os stat
 #define fstat_os fstat
 #define seek_os lseek
@@ -42,6 +44,7 @@
 #define close_os close
 #define truncate_os ftruncate
 #else
+#define access_os access
 #define stat_os stat64
 #define fstat_os fstat64
 #define seek_os lseek64
