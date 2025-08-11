@@ -32,6 +32,15 @@
 #define O_CREAT _O_CREAT
 #define O_RDWR  _O_RDWR
 #define O_DSYNC 0
+#define S_IRUSR _S_IREAD
+#define S_IWUSR _S_IWRITE
+#define S_IXUSR 0
+#define S_IRGRP 0
+#define S_IWGRP 0
+#define S_IXGRP 0
+#define S_IROTH 0
+#define S_IWOTH 0
+#define S_IXOTH 0
 #define ssize_t SSIZE_T
 #elif defined(__APPLE__)
 #define access_os access
