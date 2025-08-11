@@ -13,6 +13,7 @@
 #include <io.h>
 #include <BaseTsd.h>
 #else
+#include <fcntl.h>
 #include <sys/types.h>
 #include <unistd.h>
 #endif
