@@ -5,6 +5,7 @@
 #define _LARGEFILE64_SOURCE
 #endif
 
+#include <fcntl.h>
 #include <stdio.h>
 
 #if defined(_WIN32) || defined(_WIN64)
@@ -13,7 +14,6 @@
 #include <io.h>
 #include <BaseTsd.h>
 #else
-#include <fcntl.h>
 #include <sys/types.h>
 #include <unistd.h>
 #endif
