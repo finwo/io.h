@@ -13,6 +13,7 @@
 #include <windows.h>
 #include <io.h>
 #include <BaseTsd.h>
+#include <sys/stat.h>
 #else
 #include <sys/types.h>
 #include <unistd.h>
