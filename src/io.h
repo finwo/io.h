@@ -12,7 +12,7 @@
 // Needs to be AFTER winsock2 which is used for finwo/endian.h
 #include <windows.h>
 #include <io.h>
-#include <BaseTsd.h>
+#include <basetsd.h>
 #include <sys/stat.h>
 #else
 #include <sys/types.h>
