@@ -30,18 +30,41 @@
 #define unlink_os _unlink
 #define close_os _close
 #define truncate_os _chsize
+
 #define O_CREAT _O_CREAT
 #define O_RDWR  _O_RDWR
 #define O_DSYNC 0
+
+#ifndef S_IRUSR
 #define S_IRUSR _S_IREAD
+#endif
+#ifndef S_IWUSR
 #define S_IWUSR _S_IWRITE
+#endif
+#ifndef S_IXUSR
 #define S_IXUSR 0
-#define S_IRGRP 0
-#define S_IWGRP 0
-#define S_IXGRP 0
-#define S_IROTH 0
-#define S_IWOTH 0
-#define S_IXOTH 0
+#endif
+
+#ifndef S_IRGRP
+#define S_IRGRP (S_IRUSR>>3)
+#endif
+#ifndef S_IWGRP
+#define S_IWGRP (S_IWUSR>>3)
+#endif
+#ifndef S_IXGRP
+#define S_IXGRP (S_IXUSR>>3)
+#endif
+
+#ifndef S_IROTH
+#define S_IROTH (S_IRGRP>>3)
+#endif
+#ifndef S_IWOTH
+#define S_IWOTH (S_IWGRP>>3)
+#endif
+#ifndef S_IXOTH
+#define S_IXOTH (S_IXGRP>>3)
+#endif
+
 #define ssize_t SSIZE_T
 #elif defined(__APPLE__)
 #define access_os access
